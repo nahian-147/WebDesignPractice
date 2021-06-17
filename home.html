@@ -51,6 +51,13 @@ button{
 	font-size: 500%;
 	text-align: center;
 }
+.timePlate{
+	background-color: black;
+	color: whitesmoke;
+	font-family: 'JetBrains Mono',monospace;
+	font-size: 200%;
+	text-align: center;
+}
 </style>
 <script>
 	function f(){
@@ -66,6 +73,15 @@ button{
 		for(let i=1;i<=81;i++){
 			document.getElementById("num").innerHTML = i+"";
 			await sleep(500*i/81);
+		}
+	}
+	function showTime(){
+		document.getElementById("time").innerHTML = Date()
+	}
+	async function clock(){
+		while(true){
+			document.getElementById("DigitalClock").innerHTML = Date();
+			await sleep(1000);
 		}
 	}
 </script>
@@ -88,6 +104,14 @@ button{
 	<div class="buttonPanel">
 		<p id="num" class="numplate">0</p>
 		<button type="button" onclick="count()">click</button>
+	</div>
+	<div class="buttonPanel">
+		<p id="time" class="timePlate">0</p>
+		<button type="button" onclick="showTime()">click</button>
+	</div>
+	<div class="buttonPanel">
+		<p id="DigitalClock" class="timePlate">0</p>
+		<button type="button" onclick="clock()">StartClock</button>
 	</div>
 </body>
 </head>
