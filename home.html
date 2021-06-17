@@ -1,54 +1,93 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet"> 
 <style>
 .header{
 	background-color: black;
 	color: whitesmoke;
-	font-family: 'Courier New', Courier, monospace;
-	font-size: medium;
+	font-family: 'JetBrains Mono',monospace;
+	font-size: 450%;
 	width: 100%;
 	text-align: center;
 }
 .mylist{
 	background-color:gray;
 	color:white;
-	font-family: 'Courier New', Courier, monospace;
-	font-size: small;
+	font-family: 'JetBrains Mono',monospace;
+	font-size: 17pt;
 	width: auto;
 	text-align: left;
 	margin: auto;
 	padding: 5%;
 }
-li{
-	background-color:gray;
-	color:white;
-	font-family: 'Courier New', Courier, monospace;
-	font-size: small;
-	width: 100%;
-	text-align: left;
-}
 p{
-	background-color:rgb(39, 1, 1);
+	background-color:royalblue;
 	color:white;
-	font-family: 'Courier New', Courier, monospace;
-	font-size: small;
+	font-family: 'JetBrains Mono',monospace;
+	font-size: 17pt;
 	width: auto;
 	text-align: left;
 	padding: 0.5%;
 }
+button{
+	background-color:black;
+	color:white;
+	font-family: 'JetBrains Mono',monospace;
+	font-size: 12pt;
+	width: auto;
+	text-align: center;
+	padding: 0.5%;
+}
+.buttonPanel{
+	background-color: gray;
+	padding: 5%;
+}
+.numplate{
+	background-color: black;
+	color: whitesmoke;
+	font-family: 'JetBrains Mono',monospace;
+	font-size: 500%;
+	text-align: center;
+}
 </style>
+<script>
+	function f(){
+		document.getElementById("mylisttitle").innerHTML = "The Title has been Changed!!";
+	}
+	function reset(){
+		document.getElementById("mylisttitle").innerHTML = "Here Comes a list:";
+	}
+	function sleep(ms) {
+		return new Promise(resolve => setTimeout(resolve, ms));
+	}
+	async function count(){
+		for(let i=0;i<=81;i++){
+			document.getElementById("num").innerHTML = i+"";
+			await sleep(500);
+		}
+	}
+</script>
 <body>
 	<div class="header">
-		This is a Header.
+		This is a Header
 	</div>
 	<div class="mylist">
-		<p>Here Comes a list:</p>
+		<p id="mylisttitle"> Here Comes a list:</p>
 		<ul>
 			<li>element one</li>
 			<li>element two</li>
 			<li>element three</li>
 		</ul>
+	</div>
+	<div class="buttonPanel">
+		<button type="button" onclick="f()">try</button>
+		<button type="button" onclick="reset()">reset</button>
+	</div>
+	<div class="buttonPanel">
+		<p id="num" class="numplate">0</p>
+		<button type="button" onclick="count()">click</button>
 	</div>
 </body>
 </head>
