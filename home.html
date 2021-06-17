@@ -63,9 +63,9 @@ button{
 		return new Promise(resolve => setTimeout(resolve, ms));
 	}
 	async function count(){
-		for(let i=0;i<=81;i++){
+		for(let i=1;i<=81;i++){
 			document.getElementById("num").innerHTML = i+"";
-			await sleep(700);
+			await sleep(500*i/81);
 		}
 	}
 </script>
